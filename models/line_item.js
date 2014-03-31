@@ -1,3 +1,5 @@
+/* mongoose models for sku and deal line item collections */
+
 var mongoose = require('mongoose')
 
 require('mongoose-currency').loadType(mongoose);

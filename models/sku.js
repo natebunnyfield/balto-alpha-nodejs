@@ -1,3 +1,5 @@
+/* mongoose model for sku collection */
+
 var mongoose = require('mongoose')
 
 

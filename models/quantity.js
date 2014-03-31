@@ -1,3 +1,5 @@
+/* mongoose model for quantity collection */
+
 var mongoose = require('mongoose')
 
 
