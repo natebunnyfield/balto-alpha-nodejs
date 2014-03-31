@@ -1,6 +1,6 @@
 /* mongoose model for quantity collection */
 
-var mongoose = require('mongoose')
+var mongoose = require('../models/db').mongoose
 
 
 var QuantitySchema = mongoose.Schema({

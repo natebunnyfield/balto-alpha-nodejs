@@ -1,12 +1,13 @@
 /* requirements */
-var express = require('express');
-var http = require('http');
-var path = require('path');
+var express = require('express')
+  , http = require('http')
+  , path = require('path')
 
 
 /* project applications declarations */
 var routes = require('./routes');
 var user = require('./routes/user');
+var skus = require('./routes/sku_routes')
 
 
 /* app declaration */
@@ -35,6 +36,12 @@ if ('development' == app.get('env')) {
 /* routing configurations */
 app.get('/', routes.index);
 app.get('/users', user.list);
+
+// skus
+app.get('/skus/:id?', skus.get)
+app.post('/skus', skus.post)
+app.put('/skus/:id', skus.put)
+app.delete('/skus/:id', skus.delete)
 
 
 /* application main loop */

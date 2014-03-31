@@ -1,6 +1,6 @@
 /* mongoose model for sku collection */
 
-var mongoose = require('mongoose')
+var mongoose = require('../models/db').mongoose
 
 
 var SkuSchema = mongoose.Schema({

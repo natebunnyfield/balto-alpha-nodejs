@@ -1,9 +1,11 @@
 /* mocha tests for sku model */
 
 var Sku = require('../models/sku')
+  , supertest = require('supertest')
+  , api = supertest('http://localhost:5000')
 
 
-describe('Sku', function(){
+describe('Sku [unit]', function(){
   var sku = new Sku()
 
   it('has an id', function(){
@@ -23,7 +25,7 @@ describe('Sku', function(){
   })
 
   describe('tags', function(){
-    it('has tags', function(){
+    it('exist', function(){
       sku.should.have.property('tags')
     })
 
@@ -32,4 +34,31 @@ describe('Sku', function(){
       sku.get('tags.color').should.equal('blue')
     })
   })
+})
+
+
+describe('Sku [integration]', function () {
+  var sku = new Sku()
+  var id = ''
+
+  it('can get a list of skus', function () {
+    api.get('/skus')
+      .expect(200)
+  })
+
+  it('can create a new sku')
+
+  it('can select a sku')
+
+  it('can update a sku')
+
+  it('can delete a sku')
+
+  it('will fail creation without specified sku fields')
+
+  it('will fail select with an incorrect id')
+
+  it('will fail update with an incorrect id')
+
+  it('will fail delete with an incorrect key')
 })

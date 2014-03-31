@@ -1,6 +1,6 @@
 /* mongoose model for deal collection */
 
-var mongoose = require('mongoose')
+var mongoose = require('../models/db').mongoose
 
 require('../models/line_item')
 
